@@ -1,7 +1,7 @@
 import React from 'react'
 import listOfFilms from '../shared/ListOfFilms'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Box, Button, Container, Typography, useTheme } from '@mui/material'
+import { Box, Button, Container, Typography } from '@mui/material'
 import { ArrowBack } from '@mui/icons-material'
 const Detail = () => {
     const navigate = useNavigate()

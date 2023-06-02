@@ -4,7 +4,7 @@ module.exports = {
     rules: [
       // Other rules...
       {
-        test: /\.md$/,
+        test: /\.md$/i,
         use: 'raw-loader',
       },
     ],

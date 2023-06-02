@@ -1,20 +1,18 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import MainNewsFeature from '../components/MainNewsFeature';
 import FeaturedPost from '../components/FeaturedPost';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
-import post1 from '../components/markdown/blog-post.1.md';
-import post2 from '../components/markdown/blog-post.2.md';
-import post3 from '../components/markdown/blog-post.3.md';
+import post1 from '!!raw-loader!../components/markdown/blog-post.1.md';
+import post2 from '!!raw-loader!../components/markdown/blog-post.2.md';
+import post3 from '!!raw-loader!../components/markdown/blog-post.3.md';
 
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Title of a longer featured news',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
   image: 'https://source.unsplash.com/random?wallpapers',
@@ -60,18 +58,12 @@ const sidebar = {
     { title: 'May 1999', url: '#' },
     { title: 'April 1999', url: '#' },
   ],
-  social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
-  ],
 };
 
 // TODO remove, this demo shouldn't need to reset the theme.
 export default function News() {
-  console.log(post1)
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
       <main>
         <MainNewsFeature post={mainFeaturedPost} />
         <Grid container spacing={4}>
@@ -85,7 +77,6 @@ export default function News() {
             title={sidebar.title}
             description={sidebar.description}
             archives={sidebar.archives}
-            social={sidebar.social}
           />
         </Grid>
       </main>
