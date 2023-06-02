@@ -30,11 +30,12 @@ const About = () => {
                 <TimelineCard
                     pLeft={1}
                     pRight={8}
-                    title="Filmshop founded"
+                    title="Filmshop 1.0"
                     date="july, 2019"
-                    body1="Filmshop was founded by student from FPT University HCMC"
-                    body2="The first version of Filmshop was released"
-                    body3="Filmshop was a website that provide information about movies"
+                    body1="Filmshop was built with HTML, CSS, JS and Bootstrap"
+                    body2="The website was still not deployed"
+                    body3="Simple design and not responsive"
+                    
                 />
                 <TimelineCard
                     position={isMobile ? "left" : "right"}
@@ -42,18 +43,18 @@ const About = () => {
                     pLeft={isMobile ? 1 : 8}
                     title="Filmshop 2.0"
                     date="sept, 2021"
-                    body1="Filmshop was rebuilt with ReactJS"
-                    body2="Filmshop was rebuilt with Material UI"
-                    body3="Smoothen the user experience with ReactJS and Material UI"
+                    body1="Filmshop was rebuilt with ReactJS and Material UI"
+                    body2="The website was deployed on Vercel"
+                    body3="Responsive design and more features"
                 />
                 <TimelineCard
                     pLeft={1}
                     pRight={8}
-                    title="Filmshop 2.1"
-                    date="jan, 2023"
-                    body1="Filmshop is devloping with more features"
-                    body2="Add more features to the website"
-                    body3="Add more movies to the database"
+                    title="Filmshop 3.x"
+                    date="future"
+                    body1="Filmshop will be rebuilt with NextJS and Chakra UI"
+                    body2="The static data will be replaced by dynamic data from MongoDB"
+                    body3="More features and better design"
                 />
             </Timeline>
         </Box>
