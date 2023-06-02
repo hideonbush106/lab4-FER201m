@@ -10,19 +10,21 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material';
-import { Brightness4, Brightness7 } from '@mui/icons-material';
+import { Brightness4, Brightness7, Movie } from '@mui/icons-material';
 import ColorModeContext from '../context/ColorModeContext';
 
 const pages = ['Home', 'About', 'News', 'Contact'];
 
-function ResponsiveAppBar() {
+function Navigation() {
 
     const theme = useTheme();
     const colorMode = React.useContext(ColorModeContext);
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+    const navigate = useNavigate();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -38,7 +40,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    <Movie sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -54,7 +56,7 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        FILMSHOP
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,10 +118,10 @@ function ResponsiveAppBar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => { navigate(page === 'Home' ? '/' : `/${page.toLocaleLowerCase()}`) }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                <Link to={page === 'Home' ? '/' : `/${page.toLocaleLowerCase()}`}>{page}</Link>
+                                {page}
                             </Button>
                         ))}
                     </Box>
@@ -131,4 +133,4 @@ function ResponsiveAppBar() {
         </AppBar>
     );
 }
-export default ResponsiveAppBar;
+export default Navigation;

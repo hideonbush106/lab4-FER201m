@@ -50,3 +50,8 @@ a:visited {
   color: inherit;
   cursor: pointer;
 }
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}

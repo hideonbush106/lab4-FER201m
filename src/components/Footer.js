@@ -19,8 +19,6 @@ function Copyright() {
     );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 export default function StickyFooter() {
     const theme = useTheme()
 

@@ -71,6 +71,33 @@ const listOfFilms = [{
     nation: "USA",
     description: `After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.`,
     trailer: `https://www.youtube.com/embed/JNwNXF9Y6kY`
-}]
+},
+{
+    id: 10,
+    image: "assets/images/10.jpg",
+    title: "Star Wars: Episode VI - Return of the Jedi",
+    year: "1983",
+    nation: "USA",
+    description: `After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels dispatch to Endor to destroy the second Death Star. Meanwhile, Luke struggles to help Darth Vader back from the dark side without falling into the Emperor's trap.`,
+    trailer: `https://www.youtube.com/embed/5UfA_aKBGMc`
+},
+{
+    id: 11,
+    image: "assets/images/11.jpg",
+    title: "Star Wars: Episode VII - The Force Awakens",
+    year: "2015",
+    nation: "USA",
+    description: `As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, an ex-stormtrooper, must join Han Solo and Chewbacca to search for the one hope of restoring peace.`,
+    trailer: `https://www.youtube.com/embed/sGbxmsDFVnE`
+}, {
+    id: 12,
+    image: "assets/images/12.jpg",
+    title: "Star Wars: Episode VIII - The Last Jedi",
+    year: "2017",
+    nation: "USA",
+    description: `Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.`,
+    trailer: `https://www.youtube.com/embed/Q0CbN8sfihY`
+}
+]
 
 export default listOfFilms

@@ -1,19 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Main from './components/Main';
 import Navigation from './components/Navigation';
-import Detail from './components/Detail';
-import Contact from './components/Contact';
-import News from './components/News';
-import About from './components/About';
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
 import { createTheme } from '@mui/material';
 import ColorModeContext from './context/ColorModeContext';
-
+import { routes } from './routes/routes';
 
 function App() {
-  const [mode, setMode] = React.useState('light');
+  const [mode, setMode] = React.useState('dark');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -33,21 +28,17 @@ function App() {
     [mode],
   );
   return (
-    <div className='App'>
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <Navigation />
-          <Routes>
-            <Route path='/' element={<Main />} />
-            <Route path='/detail/:id' element={<Detail />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/news' element={<News />} />
-            <Route path='/contact' element={<Contact />} />
-          </Routes>
-          <Footer />
-        </ThemeProvider>
-      </ColorModeContext.Provider>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <Navigation />
+        <Routes>
+          {routes.map((route) => (
+            <Route key={route.path} path={route.path} Component={route.element} />
+          ))}
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 export default App;
