@@ -7,26 +7,30 @@ import { createTheme } from '@mui/material';
 import ColorModeContext from './context/ColorModeContext';
 import { routes } from './routes/routes';
 
-function App() {
+const useColorMode = () => {
   const [mode, setMode] = React.useState('dark');
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    [],
-  );
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  );
+  const toggleColorMode = React.useCallback(() => {
+    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  }, []);
+
+  const colorMode = React.useMemo(() => ({
+    toggleColorMode,
+  }), [toggleColorMode]);
+
+  const theme = React.useMemo(() =>
+    createTheme({
+      palette: {
+        mode,
+      },
+    }), [mode]);
+
+  return { colorMode, theme };
+}
+
+function App() {
+  const { colorMode, theme } = useColorMode();
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
