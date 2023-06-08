@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -39,15 +38,5 @@ function FeaturedPost(props) {
         </Grid>
     );
 }
-
-FeaturedPost.propTypes = {
-    post: PropTypes.shape({
-        date: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        imageLabel: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 export default FeaturedPost;
