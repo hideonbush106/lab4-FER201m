@@ -2,8 +2,7 @@ import React from 'react'
 
 const Component = () => {
     //create failed quality gate on purpose
-    const a = 1
-    let b = a === NaN
+    //let's fix that
     return (
         <div>Component</div>
     )
